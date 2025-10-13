@@ -1,0 +1,31 @@
+{
+  "name": "tech-tutorials-backend",
+  "version": "1.0.0",
+  "description": "Backend for the Tech Tutorials Platform",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "keywords": [
+    "react",
+    "node",
+    "express",
+    "mongodb"
+  ],
+  "author": "AI Engineer",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "mongoose": "^8.19.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "nodemon": "^3.1.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.14"
+  }
+}
