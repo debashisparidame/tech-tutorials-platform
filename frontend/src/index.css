@@ -30,3 +30,35 @@ body:not(.dark) {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Left to right sliding animation */
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-left {
+  animation: slideLeft 2s ease-out infinite;
+}
+
+/* Additional utility for smooth animations */
+@keyframes fadeInSlide {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-slide {
+  animation: fadeInSlide 0.5s ease-out forwards;
+}

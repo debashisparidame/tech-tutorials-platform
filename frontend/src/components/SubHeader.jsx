@@ -18,13 +18,13 @@ const SubHeader = () => {
   ];
 
   return (
-    <div className="bg-gray-50 dark:bg-[#2d2d2d] border-t border-b border-gray-200 dark:border-gray-700 transition-all duration-300 sticky top-[64px] z-[500] overflow-visible">
+    <div className="bg-green-700 dark:bg-gray-600 border-t border-b border-green-600 dark:border-gray-500 transition-all duration-300 sticky top-[64px] z-[500] overflow-visible">
       <div className="w-full px-4 overflow-visible md:px-20">
-        <div className="flex items-center h-12 space-x-4 overflow-visible md:space-x-6 whitespace-nowrap">
+        <div className="flex items-center justify-center h-12 space-x-4 overflow-visible md:space-x-6 whitespace-nowrap">
           {/* Core Java */}
           <a
             href="#"
-            className="flex items-center text-gray-600 transition-colors duration-200 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white"
+            className="flex items-center text-white transition-colors duration-200 hover:text-gray-200 dark:text-white dark:hover:text-gray-200"
           >
             <FaJava className="text-xl" />
             <span className="ml-2 text-sm font-medium">Core Java</span>
@@ -33,7 +33,7 @@ const SubHeader = () => {
           {/* DSA */}
           <a
             href="#"
-            className="flex items-center text-gray-600 transition-colors duration-200 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white"
+            className="flex items-center text-white transition-colors duration-200 hover:text-gray-200 dark:text-white dark:hover:text-gray-200"
           >
             <FaDatabase className="text-xl" />
             <span className="ml-2 text-sm font-medium">DSA</span>
@@ -42,7 +42,7 @@ const SubHeader = () => {
           {/* Java Servlet */}
           <a
             href="#"
-            className="flex items-center text-gray-600 transition-colors duration-200 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white"
+            className="flex items-center text-white transition-colors duration-200 hover:text-gray-200 dark:text-white dark:hover:text-gray-200"
           >
             <FaJava className="text-xl" />
             <span className="ml-2 text-sm font-medium">Java Servlet</span>
@@ -51,7 +51,7 @@ const SubHeader = () => {
           {/* JSP */}
           <a
             href="#"
-            className="flex items-center text-gray-600 transition-colors duration-200 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white"
+            className="flex items-center text-white transition-colors duration-200 hover:text-gray-200 dark:text-white dark:hover:text-gray-200"
           >
             <FaJava className="text-xl" />
             <span className="ml-2 text-sm font-medium">JSP</span>
@@ -60,7 +60,7 @@ const SubHeader = () => {
           {/* Java Spring Core */}
           <a
             href="#"
-            className="flex items-center text-gray-600 transition-colors duration-200 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white"
+            className="flex items-center text-white transition-colors duration-200 hover:text-gray-200 dark:text-white dark:hover:text-gray-200"
           >
             <SiSpringboot className="text-xl" />
             <span className="ml-2 text-sm font-medium">Java Spring Core</span>
@@ -69,25 +69,25 @@ const SubHeader = () => {
           {/* Java Spring Boot */}
           <a
             href="#"
-            className="flex items-center text-gray-600 transition-colors duration-200 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white"
+            className="flex items-center text-white transition-colors duration-200 hover:text-gray-200 dark:text-white dark:hover:text-gray-200"
           >
             <SiSpringboot className="text-xl" />
             <span className="ml-2 text-sm font-medium">Java Spring Boot</span>
           </a>
 
-          {/* Data Science */}
+          {/* Microservices */}
           <a
             href="#"
-            className="flex items-center text-gray-600 transition-colors duration-200 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white"
+            className="flex items-center text-white transition-colors duration-200 hover:text-gray-200 dark:text-white dark:hover:text-gray-200"
           >
             <SiSpringboot className="text-xl" />
-            <span className="ml-2 text-sm font-medium">Data Science</span>
+            <span className="ml-2 text-sm font-medium">Microservices</span>
           </a>
 
           {/* SQL */}
           <a
             href="#"
-            className="flex items-center text-gray-600 transition-colors duration-200 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white"
+            className="flex items-center text-white transition-colors duration-200 hover:text-gray-200 dark:text-white dark:hover:text-gray-200"
           >
             <SiMysql className="text-xl" />
             <span className="ml-2 text-sm font-medium">SQL</span>
@@ -101,7 +101,7 @@ const SubHeader = () => {
           >
             <a
               href="#"
-              className="flex items-center text-gray-600 transition-colors duration-200 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white"
+              className="flex items-center text-white transition-colors duration-200 hover:text-gray-200 dark:text-white dark:hover:text-gray-200"
             >
               <FaPython className="text-xl" />
               <span className="ml-2 text-sm font-medium">Python</span>
@@ -127,7 +127,7 @@ const SubHeader = () => {
           {/* Data Science */}
           <a
             href="#"
-            className="flex items-center text-gray-600 transition-colors duration-200 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white"
+            className="flex items-center text-white transition-colors duration-200 hover:text-gray-200 dark:text-white dark:hover:text-gray-200"
           >
             <SiSpringboot className="text-xl" />
             <span className="ml-2 text-sm font-medium">Data Science</span>

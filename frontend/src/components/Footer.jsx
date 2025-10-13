@@ -54,18 +54,17 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-sm">
-              We provides tutorials and interview questions of all technology
-              like java tutorial, android, java frameworks.
+              We provides tutorials and interview questions of all technology like java tutorial, data science, java frameworks.
             </p>
             <div>
               <h4 className="mb-2 font-semibold text-gray-900 transition-colors duration-300 dark:text-white">
                 Contact Info
               </h4>
               <p className="text-sm">
-                G-13, 2nd Floor, Sec-3, Noida, UP, 201301, India
+                Plot No-741, 2nd Floor,Jayadev Vihar, 751013 , Bhubaneswar, Odisha
               </p>
-              <p className="text-sm">hr@tpointtech.com</p>
-              <p className="text-sm">+91-9599086977</p>
+              <p className="text-sm">info@silansoftware.com</p>
+              <p className="text-sm">+91-89842 89279</p>
             </div>
             <div>
               <h4 className="mb-2 font-semibold text-gray-900 transition-colors duration-300 dark:text-white">
@@ -295,38 +294,6 @@ const Footer = () => {
                   href="#"
                   className="transition-colors hover:text-gray-900 dark:hover:text-white"
                 >
-                  C
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="transition-colors hover:text-gray-900 dark:hover:text-white"
-                >
-                  R
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="transition-colors hover:text-gray-900 dark:hover:text-white"
-                >
-                  C++
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="transition-colors hover:text-gray-900 dark:hover:text-white"
-                >
-                  Php
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="transition-colors hover:text-gray-900 dark:hover:text-white"
-                >
                   Java
                 </a>
               </li>
@@ -335,39 +302,7 @@ const Footer = () => {
                   href="#"
                   className="transition-colors hover:text-gray-900 dark:hover:text-white"
                 >
-                  Html
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="transition-colors hover:text-gray-900 dark:hover:text-white"
-                >
-                  Swift
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="transition-colors hover:text-gray-900 dark:hover:text-white"
-                >
                   Python
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="transition-colors hover:text-gray-900 dark:hover:text-white"
-                >
-                  JavaScript
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="transition-colors hover:text-gray-900 dark:hover:text-white"
-                >
-                  TypeScript
                 </a>
               </li>
             </ul>
@@ -407,9 +342,7 @@ const Footer = () => {
               Contact Us
             </a>
           </div>
-          <p>
-            &copy; Copyright 2011 - 2025 TpointTech.com. All Rights Reserved.
-          </p>
+          <p>&copy; Copyright © 2025 Java8s Powered by <a href="https://silansoftware.com/" className="text-green">Silan Software Pvt. Ltd.</a> All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -172,6 +172,8 @@ const Header = () => {
             <div className="w-6 h-6 transition-colors duration-300 bg-purple-500 border-2 border-gray-300 rounded-full dark:border-gray-600"></div>
           </div> */}
           
+
+          
         </div>
       </div>
     </header>
