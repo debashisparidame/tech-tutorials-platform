@@ -10,7 +10,7 @@ const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(true);
 
-  const fullText = "The 14+ Years of Trust with New Name Tpoint Tech";
+  const fullText = "The 10+ Years of Trust with New Name Java8s";
 
   // Typewriter effect
   useEffect(() => {
