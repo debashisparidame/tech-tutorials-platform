@@ -1,12 +1,27 @@
 import React from "react";
 
-const MegaMenu = ({ data }) => {
+const MegaMenu = ({ data, isOpen, onClose }) => {
+  if (!isOpen || !data) return null;
+
   return (
-    <div className="absolute top-full left-0 w-screen max-w-7xl -translate-x-1/2 ml-[calc(50%-1rem)] bg-white dark:bg-[#2d2d2d] border border-gray-200 dark:border-gray-700 shadow-lg rounded-b-lg px-4 p-8 z-50 transition-all duration-300">
-      <button className="absolute top-4 right-8 text-gray-400 hover:text-gray-600 dark:text-gray-400 dark:hover:text-white transition-colors duration-200">
+    <>
+      {/* Backdrop - Click to close */}
+      <div 
+        className="fixed inset-0 top-16 bg-black/20 dark:bg-black/40 z-[9998] animate-fadeIn"
+        onClick={onClose}
+      />
+      
+      {/* MegaMenu Content */}
+      <div className="fixed top-16 left-0 w-full bg-white dark:bg-[#2d2d2d] border-b border-gray-200 dark:border-gray-700 shadow-2xl px-6 py-10 z-[9999] transition-all duration-300 max-h-[80vh] overflow-y-auto animate-slideDown">
+        {/* Close Button - More Prominent */}
+      <button 
+        onClick={onClose}
+        className="absolute z-10 p-2 text-white transition-all duration-200 bg-red-500 rounded-full shadow-lg top-4 right-6 hover:bg-red-600 dark:bg-red-600 dark:hover:bg-red-700 hover:shadow-xl"
+        aria-label="Close menu"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
+          className="w-6 h-6"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -14,33 +29,102 @@ const MegaMenu = ({ data }) => {
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
-            strokeWidth={2}
+            strokeWidth={2.5}
             d="M6 18L18 6M6 6l12 12"
           />
         </svg>
       </button>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-10">
-        {data.map((category, index) => (
-          <div key={index}>
-            <h3 className="font-bold text-lg mb-3 text-gray-800 dark:text-white transition-colors duration-300">
-              {category.title}
-            </h3>
-            <ul className="space-y-2">
-              {category.items.map((item, itemIndex) => (
-                <li key={itemIndex}>
-                  <a
-                    href="#"
-                    className="text-gray-600 hover:text-green-600 dark:text-gray-400 dark:hover:text-green-400 transition-colors duration-200 text-sm"
+
+      {/* Container for content */}
+      <div className="mx-auto max-w-7xl">
+        {/* Grid Layout */}
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {data.map((category, index) => (
+            <div key={index} className="group">
+              {/* Category Header */}
+              <div className="pb-2 mb-4 border-b-2 border-green-500 dark:border-green-400">
+                <h3 className="flex items-center text-lg font-bold text-gray-800 transition-colors duration-300 dark:text-white">
+                  <span className="w-2 h-2 mr-3 bg-green-500 rounded-full dark:bg-green-400"></span>
+                  {category.title}
+                </h3>
+              </div>
+
+              {/* Category Items */}
+              <ul className="space-y-3">
+                {category.items.map((item, itemIndex) => (
+                  <li key={itemIndex}>
+                    <a
+                      href="#"
+                      className="flex items-center px-3 py-2 text-sm text-gray-600 transition-all duration-200 rounded-md hover:text-green-600 dark:text-gray-400 dark:hover:text-green-400 hover:bg-green-50 dark:hover:bg-green-900/20 hover:pl-4"
+                    >
+                      <svg
+                        className="w-3 h-3 mr-2 text-green-500 transition-opacity duration-200 opacity-0 dark:text-green-400 hover:opacity-100"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                      <span className="font-medium">{item}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+
+              {/* View All Link */}
+              <div className="pt-3 mt-4 border-t border-gray-200 dark:border-gray-600">
+                <a
+                  href="#"
+                  className="inline-flex items-center text-sm font-semibold text-green-600 transition-colors duration-200 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300"
+                >
+                  View All {category.title}
+                  <svg
+                    className="w-4 h-4 ml-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+        {/* Bottom Section */}
+        <div className="pt-6 mt-8 border-t border-gray-200 dark:border-gray-600">
+          <div className="flex flex-col items-center justify-between md:flex-row">
+            <div className="mb-4 text-center md:text-left md:mb-0">
+              <h4 className="mb-1 font-semibold text-gray-800 dark:text-white">
+                Need Help?
+              </h4>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                Contact our support team for assistance
+              </p>
+            </div>
+            <div className="flex space-x-4">
+              <button className="px-4 py-2 font-medium text-white transition-colors duration-200 bg-green-500 rounded-lg hover:bg-green-600">
+                Get Support
+              </button>
+              <button className="px-4 py-2 font-medium text-gray-700 transition-colors duration-200 border border-gray-300 rounded-lg dark:border-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">
+                Browse All
+              </button>
+            </div>
           </div>
-        ))}
+        </div>
       </div>
     </div>
+    </>
   );
 };
 

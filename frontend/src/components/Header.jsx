@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import MegaMenu from "./MegaMenu";
-import { tutorialMenuData, interviewMenuData } from "../data/menuData";
+import {
+  tutorialMenuData,
+  interviewMenuData,
+  compilerMenuData,
+} from "../data/menuData";
 import { useTheme } from "../contexts/ThemeContext";
 
 const TPointIcon = () => (
@@ -40,11 +44,16 @@ const Header = () => {
   const [activeMenu, setActiveMenu] = useState(null);
   const { darkTheme, toggleTheme } = useTheme();
 
-  const handleMouseEnter = (menu) => setActiveMenu(menu);
-  const handleMouseLeave = () => setActiveMenu(null);
+  const handleMouseEnter = (menu) => {
+    setActiveMenu(menu);
+  };
+
+  const handleCloseMenu = () => {
+    setActiveMenu(null);
+  };
 
   return (
-    <header className="bg-white dark:bg-[#2d2d2d] shadow-md dark:shadow-gray-700 sticky top-0 z-50 transition-all duration-300">
+    <header className="bg-white dark:bg-[#2d2d2d] shadow-md dark:shadow-gray-700 sticky top-0 z-[1000] transition-all duration-300">
       <div className="w-full px-4">
         <div className="flex items-center justify-between h-16">
           {/* Left: Logo */}
@@ -59,8 +68,7 @@ const Header = () => {
           <nav className="items-center hidden ml-auto space-x-8 text-gray-600 dark:text-gray-300 md:flex">
             <div
               onMouseEnter={() => handleMouseEnter("tutorials")}
-              onMouseLeave={handleMouseLeave}
-              className="relative py-5"
+              className="relative px-2 py-5"
             >
               <button className="flex items-center transition-colors duration-200 hover:text-gray-900 dark:hover:text-white">
                 Tutorials
@@ -76,15 +84,11 @@ const Header = () => {
                   />
                 </svg>
               </button>
-              {activeMenu === "tutorials" && (
-                <MegaMenu data={tutorialMenuData} />
-              )}
             </div>
 
             <div
               onMouseEnter={() => handleMouseEnter("interview")}
-              onMouseLeave={handleMouseLeave}
-              className="relative py-5"
+              className="relative px-2 py-5"
             >
               <button className="flex items-center transition-colors duration-200 hover:text-gray-900 dark:hover:text-white">
                 Interview
@@ -100,29 +104,43 @@ const Header = () => {
                   />
                 </svg>
               </button>
-              {activeMenu === "interview" && (
-                <MegaMenu data={interviewMenuData} />
-              )}
             </div>
 
-            <a
-              href="#"
-              className="flex items-center transition-colors duration-200 hover:text-gray-900 dark:hover:text-white"
+            <div
+              onMouseEnter={() => handleMouseEnter("compiler")}
+              className="relative px-2 py-5"
             >
-              Compiler
-              <svg
-                className="w-5 h-5 ml-1"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </a>
+              <button className="flex items-center transition-colors duration-200 hover:text-gray-900 dark:hover:text-white">
+                Compiler
+                <svg
+                  className="w-5 h-5 ml-1"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
           </nav>
+
+          {/* MegaMenu - Outside nav but positioned correctly */}
+          {activeMenu && (
+            <MegaMenu
+              data={
+                activeMenu === "tutorials"
+                  ? tutorialMenuData
+                  : activeMenu === "interview"
+                  ? interviewMenuData
+                  : compilerMenuData
+              }
+              isOpen={activeMenu !== null}
+              onClose={handleCloseMenu}
+            />
+          )}
 
           {/* Theme Toggle Button */}
           <button
@@ -164,16 +182,13 @@ const Header = () => {
           </button>
 
           {/* Right: Color circles */}
-          
+
           {/* <div className="flex items-center space-x-2">
             <div className="w-6 h-6 transition-colors duration-300 bg-green-500 border-2 border-gray-300 rounded-full dark:border-gray-600"></div>
             <div className="w-6 h-6 transition-colors duration-300 border-2 border-gray-300 rounded-full dark:border-gray-600 bg-cyan-500"></div>
             <div className="w-6 h-6 transition-colors duration-300 bg-blue-500 border-2 border-gray-300 rounded-full dark:border-gray-600"></div>
             <div className="w-6 h-6 transition-colors duration-300 bg-purple-500 border-2 border-gray-300 rounded-full dark:border-gray-600"></div>
           </div> */}
-          
-
-          
         </div>
       </div>
     </header>
