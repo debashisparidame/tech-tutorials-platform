@@ -101,27 +101,8 @@ const MegaMenu = ({ data, isOpen, onClose }) => {
             </div>
           ))}
         </div>
+        
         {/* Bottom Section */}
-        <div className="pt-6 mt-8 border-t border-gray-200 dark:border-gray-600">
-          <div className="flex flex-col items-center justify-between md:flex-row">
-            <div className="mb-4 text-center md:text-left md:mb-0">
-              <h4 className="mb-1 font-semibold text-gray-800 dark:text-white">
-                Need Help?
-              </h4>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Contact our support team for assistance
-              </p>
-            </div>
-            <div className="flex space-x-4">
-              <button className="px-4 py-2 font-medium text-white transition-colors duration-200 bg-green-500 rounded-lg hover:bg-green-600">
-                Get Support
-              </button>
-              <button className="px-4 py-2 font-medium text-gray-700 transition-colors duration-200 border border-gray-300 rounded-lg dark:border-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">
-                Browse All
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
     </>
