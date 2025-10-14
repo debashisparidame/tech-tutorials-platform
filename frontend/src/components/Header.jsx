@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import MegaMenu from "./MegaMenu";
 import {
   tutorialMenuData,
@@ -56,13 +57,16 @@ const Header = () => {
     <header className="bg-white dark:bg-[#2d2d2d] shadow-md dark:shadow-gray-700 sticky top-0 z-[1000] transition-all duration-300">
       <div className="w-full px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Left: Logo */}
-          <div className="flex items-center">
+          {/* Left: Logo - Clickable */}
+          <Link
+            to="/"
+            className="flex items-center transition-transform duration-200 hover:scale-105"
+          >
             <TPointIcon />
             <span className="ml-2 text-xl font-bold text-gray-800 transition-colors duration-300 dark:text-white">
               Java8s
             </span>
-          </div>
+          </Link>
 
           {/* Middle: Navigation */}
           <nav className="items-center hidden ml-auto space-x-8 text-gray-600 dark:text-gray-300 md:flex">
@@ -125,6 +129,15 @@ const Header = () => {
                 </svg>
               </button>
             </div>
+
+            {/* Blog Link */}
+            <Link
+              to="/blogs"
+              className="px-2 py-5 transition-colors duration-200 hover:text-gray-900 dark:hover:text-white"
+              onMouseEnter={() => handleCloseMenu()}
+            >
+              Blog
+            </Link>
           </nav>
 
           {/* MegaMenu - Outside nav but positioned correctly */}
