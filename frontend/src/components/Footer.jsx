@@ -315,24 +315,6 @@ const Footer = () => {
               href="#"
               className="transition-colors hover:text-gray-900 dark:hover:text-white"
             >
-              Latest Post
-            </a>
-            <a
-              href="#"
-              className="transition-colors hover:text-gray-900 dark:hover:text-white"
-            >
-              Tutorials List
-            </a>
-            <a
-              href="#"
-              className="transition-colors hover:text-gray-900 dark:hover:text-white"
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="#"
-              className="transition-colors hover:text-gray-900 dark:hover:text-white"
-            >
               About Us
             </a>
             <a
@@ -341,8 +323,14 @@ const Footer = () => {
             >
               Contact Us
             </a>
+            <a
+              href="#"
+              className="transition-colors hover:text-gray-900 dark:hover:text-white"
+            >
+              Privacy Policy
+            </a>
           </div>
-          <p>&copy; Copyright © 2025 Java8s Powered by <a href="https://silansoftware.com/" className="text-green">Silan Software Pvt. Ltd.</a> All rights reserved.</p>
+          <p>&copy; Copyright © 2025 Java8s Powered by <a href="https://silansoftware.com/" className="text-green-600">Silan Software Pvt. Ltd.</a> All rights reserved.</p>
         </div>
       </div>
     </footer>
