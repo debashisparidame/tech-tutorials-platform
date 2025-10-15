@@ -7,12 +7,23 @@ const MegaMenu = ({ data, isOpen, onClose }) => {
     <>
       {/* Backdrop - Click to close */}
       <div 
-        className="fixed inset-0 top-16 bg-black/20 dark:bg-black/40 z-[9998] animate-fadeIn"
+        className="fixed inset-0 top-[128px] bg-black/20 dark:bg-black/40 z-[998]"
         onClick={onClose}
+        style={{ 
+          transform: 'translateZ(0)',
+          backfaceVisibility: 'hidden'
+        }}
       />
       
       {/* MegaMenu Content */}
-      <div className="fixed top-16 left-0 w-full bg-white dark:bg-[#2d2d2d] border-b border-gray-200 dark:border-gray-700 shadow-2xl px-6 py-10 z-[9999] transition-all duration-300 max-h-[80vh] overflow-y-auto animate-slideDown">
+      <div 
+        className="fixed left-0 right-0 w-full bg-white dark:bg-[#2d2d2d] border-b border-gray-200 dark:border-gray-700 shadow-lg z-[999] px-6 py-10 overflow-y-auto"
+        style={{ 
+          top: '128px',
+          transform: 'translateZ(0)',
+          backfaceVisibility: 'hidden',
+          maxHeight: 'calc(100vh - 128px)'
+        }}>
         {/* Close Button - More Prominent */}
       <button 
         onClick={onClose}

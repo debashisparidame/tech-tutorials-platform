@@ -45,16 +45,30 @@ const Header = () => {
   const [activeMenu, setActiveMenu] = useState(null);
   const { darkTheme, toggleTheme } = useTheme();
 
-  const handleMouseEnter = (menu) => {
-    setActiveMenu(menu);
+  const handleMenuClick = (menu) => {
+    setActiveMenu(activeMenu === menu ? null : menu);
   };
 
   const handleCloseMenu = () => {
     setActiveMenu(null);
   };
 
+  // Close menu when clicking outside
+  React.useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (activeMenu && !event.target.closest('.nav-menu-container')) {
+        setActiveMenu(null);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [activeMenu]);
+
   return (
-    <header className="bg-white dark:bg-[#2d2d2d] sticky top-0 z-[1000] transition-all duration-300">
+    <header className="bg-white dark:bg-[#2d2d2d] fixed top-0 left-0 right-0 z-[1000]" style={{ willChange: 'transform' }}>
       <div className="w-full px-4">
         <div className="flex items-center justify-between h-16">
           {/* Left: Logo - Clickable */}
@@ -70,14 +84,14 @@ const Header = () => {
 
           {/* Middle: Navigation */}
           <nav className="items-center hidden ml-auto space-x-8 text-gray-600 dark:text-gray-300 md:flex">
-            <div
-              onMouseEnter={() => handleMouseEnter("tutorials")}
-              className="relative px-2 py-5"
-            >
-              <button className="flex items-center transition-colors duration-200 hover:text-gray-900 dark:hover:text-white">
+            <div className="relative px-2 py-5 nav-menu-container">
+              <button 
+                onClick={() => handleMenuClick("tutorials")}
+                className="flex items-center transition-colors duration-200 hover:text-gray-900 dark:hover:text-white"
+              >
                 Tutorials
                 <svg
-                  className="w-5 h-5 ml-1"
+                  className={`w-5 h-5 ml-1 transform transition-transform duration-200 ${activeMenu === "tutorials" ? "rotate-180" : ""}`}
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -90,14 +104,14 @@ const Header = () => {
               </button>
             </div>
 
-            <div
-              onMouseEnter={() => handleMouseEnter("interview")}
-              className="relative px-2 py-5"
-            >
-              <button className="flex items-center transition-colors duration-200 hover:text-gray-900 dark:hover:text-white">
+            <div className="relative px-2 py-5 nav-menu-container">
+              <button 
+                onClick={() => handleMenuClick("interview")}
+                className="flex items-center transition-colors duration-200 hover:text-gray-900 dark:hover:text-white"
+              >
                 Interview
                 <svg
-                  className="w-5 h-5 ml-1"
+                  className={`w-5 h-5 ml-1 transform transition-transform duration-200 ${activeMenu === "interview" ? "rotate-180" : ""}`}
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -110,14 +124,14 @@ const Header = () => {
               </button>
             </div>
 
-            <div
-              onMouseEnter={() => handleMouseEnter("compiler")}
-              className="relative px-2 py-5"
-            >
-              <button className="flex items-center transition-colors duration-200 hover:text-gray-900 dark:hover:text-white">
+            <div className="relative px-2 py-5 nav-menu-container">
+              <button 
+                onClick={() => handleMenuClick("compiler")}
+                className="flex items-center transition-colors duration-200 hover:text-gray-900 dark:hover:text-white"
+              >
                 Compiler
                 <svg
-                  className="w-5 h-5 ml-1"
+                  className={`w-5 h-5 ml-1 transform transition-transform duration-200 ${activeMenu === "compiler" ? "rotate-180" : ""}`}
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
