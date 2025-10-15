@@ -54,7 +54,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-white dark:bg-[#2d2d2d] shadow-md dark:shadow-gray-700 sticky top-0 z-[1000] transition-all duration-300">
+    <header className="bg-white dark:bg-[#2d2d2d] sticky top-0 z-[1000] transition-all duration-300">
       <div className="w-full px-4">
         <div className="flex items-center justify-between h-16">
           {/* Left: Logo - Clickable */}
@@ -130,14 +130,14 @@ const Header = () => {
               </button>
             </div>
 
-            {/* Blog Link */}
+            {/* Blog Link
             <Link
               to="/blogs"
               className="px-2 py-5 transition-colors duration-200 hover:text-gray-900 dark:hover:text-white"
               onMouseEnter={() => handleCloseMenu()}
             >
               Blog
-            </Link>
+            </Link> */}
           </nav>
 
           {/* MegaMenu - Outside nav but positioned correctly */}

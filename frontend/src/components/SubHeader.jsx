@@ -18,7 +18,7 @@ const SubHeader = () => {
   ];
 
   return (
-    <div className="bg-green-700 dark:bg-gray-600 border-t border-b border-green-600 dark:border-gray-500 transition-all duration-300 sticky top-[64px] z-[500] overflow-visible">
+    <div className="bg-green-700 dark:bg-gray-600 border-b border-green-600 dark:border-gray-500 sticky top-16 z-[500] overflow-visible">
       <div className="w-full px-4 overflow-visible md:px-20">
         <div className="flex items-center justify-center h-12 space-x-4 overflow-visible md:space-x-6 whitespace-nowrap">
           {/* Core Java */}
